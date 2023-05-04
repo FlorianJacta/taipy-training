@@ -1,0 +1,1 @@
+# Write an app that create simple charts by poviding inputs and diplay them
