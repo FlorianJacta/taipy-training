@@ -54,13 +54,12 @@ partial_md = "<|{forecast}|table|width=100%|>"
 dialog_md = "<|{show_dialog}|dialog|partial={partial}|title=Forecast Data|on_action={lambda state: state.assign('show_dialog', False)}|>"
 
 page = dialog_md + """<|toggle|theme|>
-<|container|
-# Stock Price **Analysis**{: .color-primary} Dashboard
+# Stock Price **Analysis** Dashboard
 
-<|layout|columns=1 2 1|gap=40px|class_name=card p2|
+<|layout|columns=1 2 1|gap=40px|
 
 <dates|
-#### Selected **Period**{: .color-primary}
+#### Selected **Period**
 
 From:
 <|{start_date}|date|>  
@@ -73,7 +72,7 @@ To:
 |dates>
 
 <ticker|
-#### Selected **Ticker**{: .color-primary}
+#### Selected **Ticker**
 
 Please enter a valid ticker: 
 <|{selected_stock}|input|label=Stock|> 
@@ -84,7 +83,7 @@ or choose a popular one
 |ticker>
 
 <years|
-#### Prediction **years**{: .color-primary}
+#### Prediction **years**
 Select number of prediction years: <|{n_years}|>  
 <|{n_years}|slider|min=1|max=5|>  
 
@@ -125,6 +124,20 @@ Select number of prediction years: <|{n_years}|>
 |>
 """
 
+"""
+stylekit = {
+    "color_primary": "#188803",
+    "color_secondary": "#808080",
+    "color_info": "#0b96cc",
+    "color_success": "#188803",
+    "color_warning": "#ea7315",
+    "color_error": "#ea302d",
+    "color_background_light": "#ffffff",
+    "color_background_dark": "#000000",
+    "color_paper_light": "#daf4f0",
+    "color_paper_dark": "#581845"
+}
+"""
 
 # Run Taipy GUI
 gui = Gui(page)
