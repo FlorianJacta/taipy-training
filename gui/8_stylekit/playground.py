@@ -120,8 +120,6 @@ Select number of prediction years: <|{n_years}|>
 
 
 <|More info|button|on_action={lambda s: s.assign("show_dialog", True)}|>
-{: .text-center}
-|>
 """
 
 """

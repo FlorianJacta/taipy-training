@@ -125,7 +125,7 @@ Select number of prediction years: <|{n_years}|>
 |>
 """
 
-"""
+
 stylekit = {
     "color_primary": "#188803",
     "color_secondary": "#808080",
@@ -138,9 +138,8 @@ stylekit = {
     "color_paper_light": "#daf4f0",
     "color_paper_dark": "#581845"
 }
-"""
 
 # Run Taipy GUI
 gui = Gui(page)
 partial = gui.add_partial(partial_md)
-gui.run(dark_mode=False, port=5005)
+gui.run(dark_mode=False, port=5005, stylekit=stylekit)
