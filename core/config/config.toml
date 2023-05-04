@@ -20,7 +20,7 @@ scope = "SCENARIO:SCOPE"
 
 [TASK.clean_data]
 inputs = [ "initial_dataset:SECTION",]
-function = "algos.algos.clean_data:function"
+function = "core.algos.algos.clean_data:function"
 outputs = [ "cleaned_dataset:SECTION",]
 skippable = "True:bool"
 
@@ -28,15 +28,14 @@ skippable = "True:bool"
 inputs = [
   "cleaned_dataset:SECTION",
   "day:SECTION",
-  "cleaned_datset:SECTION"
 ]
-function = "algos.algos.predict:function"
+function = "core.algos.algos.predict:function"
 outputs = [ "predictions:SECTION",]
 skippable = "False:bool"
 
 [TASK.evaluate]
 inputs = [ "predictions:SECTION", "cleaned_dataset:SECTION", "day:SECTION",]
-function = "algos.algos.evaluate:function"
+function = "core.algos.algos.evaluate:function"
 outputs = [ "evaluation:SECTION",]
 skippable = "False:bool"
 
@@ -51,13 +50,3 @@ frequency = "DAILY:FREQUENCY"
 x = [ "1:int", "2:int", "3:int",]
 
 [SCENARIO.scenario.comparators]
-
-[TASK.clean_data_2]
-inputs = [ "initial_dataset:SECTION" ]
-outputs = [ "cleaned_datset:SECTION" ]
-function = "algos.algos.clean_data_2:function"
-skippable = "False:bool"
-
-[DATA_NODE.cleaned_datset]
-storage_type = "pickle"
-scope = "SCENARIO"
