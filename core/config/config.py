@@ -5,6 +5,9 @@ import datetime as dt
 from algos.algos import clean_data, predict, evaluate
 
 
+
+
+
 ## Input Data Nodes
 initial_dataset_cfg = Config.configure_data_node(id="initial_dataset",
                                                  storage_type="csv",
@@ -44,5 +47,11 @@ baseline_pipeline_cfg = Config.configure_pipeline(id="baseline",
                                                   task_configs=[clean_data_task_cfg, predict_task_cfg, evaluate_task_cfg])
 # Configure our scenario config.
 scenario_cfg = Config.configure_scenario(id="scenario", pipeline_configs=[baseline_pipeline_cfg], frequency=Frequency.DAILY)
+
+
+
+
+
+
 
 Config.export('config/config.toml')

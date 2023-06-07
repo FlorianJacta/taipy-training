@@ -1,7 +1,7 @@
 from taipy.gui import Gui 
 
-
 title = 1
+
 md = """
 <|{title}|number|on_change=change_partial|>
 

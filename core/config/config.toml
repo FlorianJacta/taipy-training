@@ -20,22 +20,19 @@ scope = "SCENARIO:SCOPE"
 
 [TASK.clean_data]
 inputs = [ "initial_dataset:SECTION",]
-function = "core.algos.algos.clean_data:function"
+function = "algos.algos.clean_data:function"
 outputs = [ "cleaned_dataset:SECTION",]
 skippable = "True:bool"
 
 [TASK.predict]
-inputs = [
-  "cleaned_dataset:SECTION",
-  "day:SECTION",
-]
-function = "core.algos.algos.predict:function"
+inputs = [ "cleaned_dataset:SECTION", "day:SECTION",]
+function = "algos.algos.predict:function"
 outputs = [ "predictions:SECTION",]
 skippable = "False:bool"
 
 [TASK.evaluate]
 inputs = [ "predictions:SECTION", "cleaned_dataset:SECTION", "day:SECTION",]
-function = "core.algos.algos.evaluate:function"
+function = "algos.algos.evaluate:function"
 outputs = [ "evaluation:SECTION",]
 skippable = "False:bool"
 
@@ -45,8 +42,5 @@ tasks = [ "clean_data:SECTION", "predict:SECTION", "evaluate:SECTION",]
 [SCENARIO.scenario]
 pipelines = [ "baseline:SECTION",]
 frequency = "DAILY:FREQUENCY"
-
-[DATA_NODE.cleaned_dataset.default_data]
-x = [ "1:int", "2:int", "3:int",]
 
 [SCENARIO.scenario.comparators]

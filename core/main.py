@@ -23,7 +23,7 @@ if __name__ == "__main__":
     
     my_first_scenario = create_scenario(dt.datetime(2021, 1, 25))
     
-    predictions = my_first_scenario.baseline.predictions.read()
+    predictions = my_first_scenario.predictions.read()
     print("Predictions\n",predictions)  
     
     for i in range(10):
