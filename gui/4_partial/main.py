@@ -16,4 +16,4 @@ def change_partial(state):
 
 gui = Gui(md)
 p = gui.add_partial("<h1>test</h1>")
-gui.run()
+gui.run(port=5001)

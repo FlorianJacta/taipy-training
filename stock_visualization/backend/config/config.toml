@@ -1,0 +1,36 @@
+
+[DATA_NODE.ticker]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+default_data = "AAPL"
+
+[DATA_NODE.date]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+default_data = "2023-06-29T00:00:00:datetime"
+
+[TASK.get_data]
+inputs = [ "ticker:SECTION", "date:SECTION" ]
+outputs = [ "preprocessed_dataset:SECTION" ]
+function = "algos.algos.get_data:function"
+skippable = "False:bool"
+
+[DATA_NODE.preprocessed_dataset]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[TASK.predict]
+inputs = [ "preprocessed_dataset:SECTION" ]
+outputs = [ "predictions:SECTION" ]
+function = "algos.algos.predict:function"
+skippable = "False:bool"
+
+[DATA_NODE.predictions]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[PIPELINE.pipeline]
+tasks = [ "get_data:SECTION", "predict:SECTION" ]
+
+[SCENARIO.scenario]
+pipelines = [ "pipeline:SECTION" ]

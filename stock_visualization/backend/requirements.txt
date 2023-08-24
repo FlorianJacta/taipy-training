@@ -1,0 +1,4 @@
+taipy==2.4
+yfinance==0.1.96
+holidays==0.24
+prophet==1.1.2

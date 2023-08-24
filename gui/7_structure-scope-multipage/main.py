@@ -14,7 +14,7 @@ selector_country = list(np.sort(data['Country/Region'].astype(str).unique()))
 selected_country = 'France'
 
 pages = {
-    "/":"<center><|navbar|></center> #Hello",
+    "/":"<center><|navbar|></center>",
     "Country":country_md,
     "World":world_md,
     "Map":map_md,

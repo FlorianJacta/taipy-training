@@ -1,2 +1,4 @@
 .data
 core/.data
+stock_visualization/backend/pages/__pycache__/data_viz.cpython-310.pyc
+*.pyc
