@@ -1,16 +1,18 @@
 from taipy.gui import Gui, notify
-import datetime as dt
-import yfinance as yf
 
-def get_stock_data(ticker):
-    now = dt.date.today()
-    past = now - dt.timedelta(days=365*2)
-    return yf.download(ticker, past, now).reset_index()
+import pandas as pd
 
-ticker = 'AAPL'
-data = get_stock_data(ticker)
+path = ""
+data = None
 
 historical = """
+<|{data}|table|rebuild|>
+
+<|{path}|file_selector|on_action=upload|>
 """
+
+def upload(state):
+    state.data = pd.read_csv(state.path)
+
 
 Gui(historical).run()

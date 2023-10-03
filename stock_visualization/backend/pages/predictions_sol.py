@@ -4,6 +4,8 @@ import datetime as dt
 
 tp.Config.load("config/config.toml")
 
+
+ticker = 'AAPL'
 scenario = None
 default_data = {"Date":[0], "Predictions":[0]}
 

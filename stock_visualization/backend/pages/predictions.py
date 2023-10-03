@@ -8,13 +8,13 @@ scenario = None
 default_data = {"Date":[0], "Predictions":[0]}
 
 predictions = Markdown("""
-[put scenario selector]
+<|{scenario}|scenario_selector|>
 
-### **Daily**{: .color-primary} Predictions
-[put toggle to choose from MSFT;GOOG;AAPL]
+### **Daily** Predictions
+<|{ticker}|toggle|lov=MSFT;GOOG;AAPL|on_change=save|>
 
 <|layout|columns=5 2|
-[put scenario]
+<|{scenario}|scenario|>
 
 <|Refresh|button|on_action={lambda s: s.assign("scenario", scenario)}|>
 |>
@@ -23,11 +23,14 @@ predictions = Markdown("""
 """)
 
 def show_preditions(scenario):
-    return default_data
+    if scenario is not None and scenario.predictions.read() is not None:
+        return scenario.predictions.read()
+    else:
+        return default_data
 
 def save(state, var_name, var_value):
-    # write ticker
-    # write date
-    # write predictions to None
-    # refresh scenario
+    state.scenario.ticker.write(state.ticker)
+    state.scenario.date.write(dt.date.today())
+    state.scenario.predictions.write(None)
+    state.scenario = state.scenario
     notify(state, "success", 'Parameters saved: ready for submission!')

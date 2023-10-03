@@ -1,0 +1,44 @@
+[TAIPY]
+
+[DATA_NODE.initial_dataset]
+storage_type = "csv"
+scope = "GLOBAL:SCOPE"
+path = "data/dataset.csv"
+
+[DATA_NODE.day]
+default_data = "2021-07-26T00:00:00:datetime"
+
+[DATA_NODE.cleaned_dataset]
+storage_type = "parquet"
+scope = "GLOBAL:SCOPE"
+
+[DATA_NODE.predictions]
+
+[DATA_NODE.evaluation]
+
+[TASK.clean_data]
+function = "algos.algos.clean_data:function"
+inputs = [ "initial_dataset:SECTION",]
+outputs = [ "cleaned_dataset:SECTION",]
+skippable = "True:bool"
+
+[TASK.predict]
+function = "algos.algos.predict:function"
+inputs = [ "cleaned_dataset:SECTION", "day:SECTION",]
+outputs = [ "predictions:SECTION",]
+skippable = "False:bool"
+
+[TASK.evaluate]
+function = "algos.algos.evaluate:function"
+inputs = [ "predictions:SECTION", "cleaned_dataset:SECTION", "day:SECTION",]
+outputs = [ "evaluation:SECTION",]
+skippable = "False:bool"
+
+[SCENARIO.scenario]
+tasks = [ "clean_data:SECTION", "predict:SECTION", "evaluate:SECTION",]
+additional_data_nodes = []
+frequency = "MONTHLY:FREQUENCY"
+
+[SCENARIO.scenario.comparators]
+
+[SCENARIO.scenario.sequences]

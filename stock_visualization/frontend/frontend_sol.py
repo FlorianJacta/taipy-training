@@ -15,7 +15,10 @@ ticker = 'AAPL'
 data = get_stock_data(ticker)
 
 historical = """
-#### Stock Price **Analysis**{: .color-primary} <|{ticker}|toggle|lov=MSFT;GOOG;AAPL|on_change=update_ticker|>
+#### Stock Price **Analysis**{: .color-primary}
+<|{ticker}|toggle|lov=MSFT;GOOG;AAPL|on_change=update_ticker|>
+
+Mean Volume: <|{int(data['Volume'].mean())}|>
 
 <|{data}|chart|x=Date|y=Volume|>
 """
