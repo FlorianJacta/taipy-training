@@ -24,7 +24,5 @@ if __name__=="__main__":
     scenario_1.subscribe(callback_scenario_state)
 
     scenario_1.submit(wait=True)
-    
-    tp.Rest().run()
 
 

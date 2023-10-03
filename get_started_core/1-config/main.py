@@ -2,8 +2,7 @@ import taipy as tp
 
 import datetime as dt
 
-#from config.config import *
-from config_2_4.config import *
+from config.config import *
 
 
 def create_and_run_scenario(date: dt.datetime):

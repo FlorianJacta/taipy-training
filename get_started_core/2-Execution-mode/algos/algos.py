@@ -6,6 +6,6 @@ def double(nb):
     return nb * 2
 
 def add(nb):
-    print("Wait 10 seconds in add function")
-    time.sleep(10)
+    print("Wait 5 seconds in add function")
+    time.sleep(5)
     return nb + 10
