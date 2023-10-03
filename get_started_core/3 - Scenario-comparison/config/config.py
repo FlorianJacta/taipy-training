@@ -1,4 +1,5 @@
 from taipy import Config
+from algos.algos import *
 
 # Configuration of Data Nodes
 input_cfg = Config.configure_data_node("input", default_data=21)
