@@ -29,8 +29,11 @@ skippable = "False:bool"
 storage_type = "pickle"
 scope = "SCENARIO:SCOPE"
 
-[PIPELINE.pipeline]
-tasks = [ "get_data:SECTION", "predict:SECTION" ]
-
 [SCENARIO.scenario]
-pipelines = [ "pipeline:SECTION" ]
+tasks = [ "get_data:SECTION", "predict:SECTION" ]
+additional_data_nodes = []
+frequency = "MONTHLY:FREQUENCY"
+
+[SCENARIO.scenario.comparators]
+
+[SCENARIO.scenario.sequences]

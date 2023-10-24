@@ -4,7 +4,8 @@ import datetime as dt
 
 from config.config import *
 
-
+def on_init(state):
+    state.lol = "EKDDK"
 
 def create_and_run_scenario(date: dt.datetime):
     scenario = tp.create_scenario(config=scenario_cfg,

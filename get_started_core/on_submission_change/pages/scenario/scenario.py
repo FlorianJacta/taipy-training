@@ -8,10 +8,9 @@ def on_submission(state, submittable , details):
 
 scenario = None
 
-def on_init(state):
+def init(state):
     state.lol = 'hello'
 
-def on_change(state):
-    print("Local")
+
 
 scenario_md = Markdown('pages/scenario/scenario.md')

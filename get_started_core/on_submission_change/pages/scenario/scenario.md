@@ -10,5 +10,7 @@
 
 <|{lol}|>
 
+<|{lol}|input|>
+
 <|job_selector|>
 <|{scenario}|scenario_dag|>

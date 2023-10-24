@@ -1,2 +1,2 @@
-taipy==2.4
+taipy==3.0.0.dev6
 yfinance==0.1.96

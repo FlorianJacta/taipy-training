@@ -38,6 +38,7 @@ def on_exception(state, function_name: str, ex: Exception):
     print(err)
     notify(state, 'e', err)
 
+
 pages = {
          "/":"<|navbar|>",
          "page_1": page_1,
