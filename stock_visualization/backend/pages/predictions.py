@@ -7,7 +7,7 @@ tp.Config.load("config/config.toml")
 ticker = 'AAPL'
 scenario = None
 data_node = None
-
+jobs = []
 default_data = {"Date":[0], "Predictions":[0]}
 
 def on_submission_status_change(state, submittable, details):
@@ -36,6 +36,8 @@ Put a Data Node selector
                        
 Put a Data Node
 |>
+                       
+Put a job selector
 """)
 
 def show_preditions(scenario):
