@@ -1,5 +1,4 @@
 import taipy as tp
-
 from taipy.gui import Markdown
 
 from config.config import *
@@ -16,4 +15,4 @@ pages = {'/':'<|navbar|> <|toggle|theme|> <br/>',
 
 if __name__ == "__main__":
     tp.Core().run()
-    tp.Gui(pages=pages).run(port=4999)
+    tp.Gui(pages=pages).run(port=4999, title="Backend Demo")

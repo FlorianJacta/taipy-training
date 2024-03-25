@@ -1,12 +1,12 @@
 <|1 3 4|layout|
 <|{scenario}|scenario_selector|>
 
-**Day of prediction**
+**Prediction Start Date**
 <|{scenario.day if scenario else None}|data_node|>
 
 **Scenario**
-<|{scenario}|scenario|>
+<|{scenario}|scenario|show_properties=False|show_sequences=False|>
 |>
 
-<|job_selector|>
+<|job_selector|show_submitted_label=False|>
 <|{scenario}|scenario_dag|>

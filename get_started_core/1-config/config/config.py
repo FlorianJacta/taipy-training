@@ -31,15 +31,17 @@ clean_data_task_cfg = Config.configure_task(id="clean_data",
                                             skippable=True)
 
 predict_task_cfg = Config.configure_task(id="predict",
-                                                 function=predict,
-                                                 input=[cleaned_dataset_cfg, day_cfg],
-                                                 output=predictions_cfg)
+                                         function=predict,
+                                         input=[cleaned_dataset_cfg, day_cfg],
+                                         output=predictions_cfg,
+                                         skippable=True)
 
 evaluation_cfg = Config.configure_data_node(id="evaluation")
 evaluate_task_cfg = Config.configure_task(id="evaluate",
-                                            function=evaluate,
-                                            input=[predictions_cfg, cleaned_dataset_cfg, day_cfg],
-                                            output=evaluation_cfg)
+                                          function=evaluate,
+                                          input=[predictions_cfg, cleaned_dataset_cfg, day_cfg],
+                                          output=evaluation_cfg,
+                                          skippable=True)
 
 # 
 # Configure our scenario config.

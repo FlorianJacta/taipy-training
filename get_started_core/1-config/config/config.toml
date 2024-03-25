@@ -26,13 +26,13 @@ skippable = "True:bool"
 function = "algos.algos.predict:function"
 inputs = [ "cleaned_dataset:SECTION", "day:SECTION",]
 outputs = [ "predictions:SECTION",]
-skippable = "False:bool"
+skippable = "True:bool"
 
 [TASK.evaluate]
 function = "algos.algos.evaluate:function"
 inputs = [ "predictions:SECTION", "cleaned_dataset:SECTION", "day:SECTION",]
 outputs = [ "evaluation:SECTION",]
-skippable = "False:bool"
+skippable = "True:bool"
 
 [SCENARIO.scenario]
 tasks = [ "clean_data:SECTION", "predict:SECTION", "evaluate:SECTION",]
