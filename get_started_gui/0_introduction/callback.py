@@ -22,4 +22,4 @@ def compute_data(decay:int)->list:
 
 data = compute_data(value)
 
-Gui(page).run(use_reloader=True, port=5002) # debug=True
+Gui(page).run(use_reloader=True, port=5002, title="Frontend Demo")

@@ -6,7 +6,7 @@ revealed = False
 page = """
 <|{text if text else 'Write something in the input'}|>
 
-<|{text}|input|on_change={lambda state: notify(state, 'i', s.text)}|>
+<|{text}|input|on_change={lambda state: notify(state, 'i', state.text)}|>
 
 <|part|render={len(text)>0}|
 Part hidden and discovered after input
